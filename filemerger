@@ -1,0 +1,13 @@
+#!/bin/bash
+directory_path="/home/sreedarsh-v"
+output_file="merged_file.txt"
+cd "$directory_path" || exit
+> "$output_file"
+for file in *; do
+    if [ "$file" != "$output_file" ]; then
+        cat "$file" >> "$output_file"
+    fi
+done
+
+echo "All files merged into $output_file"
+
